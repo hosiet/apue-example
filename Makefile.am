@@ -1,4 +1,2 @@
-AM_CPPFLAGS = -I$(top_srcdir)
-bin_PROGRAMS = bbstest
-bbstest_SOURCES = bbstest.c
-noinst_HEADERS = bbstest.h
+SUBDIRS = include src
+EXTRA_DISTS = COPYING NEWS ChangeLog INSTALL README AUTHORS

@@ -1,0 +1,8 @@
+APUE-example
+=======
+
+Introduction
+------------
+
+本项目用来进行测试，锻炼自己使用 Autotools, signal(C),
+daemon process, getopt, git, 文件相关的知识。
