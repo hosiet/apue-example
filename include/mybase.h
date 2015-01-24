@@ -19,6 +19,7 @@ extern char *fs_declaration;
 extern sig_atomic_t signumber;
 
 /* library function API */
+int start_daemon();
 int sigaction_init_process();
 
 #endif /* APUE_EXAMPLE_MYBASE_H */

@@ -18,6 +18,7 @@ AC_CHECK_HEADERS([stdlib.h string.h syslog.h unistd.h])
 # Checks for typedefs, structures, and compiler characteristics.
 
 # Checks for library functions.
+AC_FUNC_FORK
 AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([Makefile

@@ -1,6 +1,7 @@
 *~
 *.o
 .deps/
+.ycm_extra_conf.pyc
 Makefile
 Makefile.in
 aclocal.m4

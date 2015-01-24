@@ -86,3 +86,10 @@ sigaction_init_process()
     }
     return(0);
 }
+
+/* FIXME
+ *
+ * try to use sa.sa_mask;
+ * deal with child processes;
+ * use siginfo_t for better dealing experience.
+ */

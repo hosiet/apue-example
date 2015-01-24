@@ -65,6 +65,16 @@ int main(int argc, char **argv)
     openlog("mydaemon", LOG_PERROR | LOG_PID, LOG_DAEMON | LOG_USER);
 
     /* determine whether to run as a daemon */
+    if (standalone == 1) {
+	/* become a daemon */
+	status = start_daemon();
+	if (status == -1) {
+	    /* failed in start_daemon() */
+	    syslog(LOG_ERR, "failed to finish start_daemon().");
+	    exit(EXIT_FAILURE);
+	}
+	syslog(LOG_NOTICE, "successfully become a daemon.");
+    }
 
     // FIXME
 
@@ -73,9 +83,10 @@ int main(int argc, char **argv)
     status = sigaction_init_process();
     if (status == -1) {
 	/* unsuccessful sigaction set */
-	syslog(LOG_ERR, "sigaction assignment failed. Exiting.");
+	syslog(LOG_ERR, "sigaction assignment failed. Exiting...");
 	exit(EXIT_FAILURE);
     }
+    syslog(LOG_NOTICE, "sigaction assignment successful.");
     
     /* do sleep cycle; waiting for signals. */
 
